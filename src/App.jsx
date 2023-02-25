@@ -10,6 +10,7 @@ import './App.css'
 import RequireAuth from './components/RequireAuth'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
+import ResetPassword from './components/ResetPassword'
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/login" element={<Login/>} />
           <Route path="/signin" element={<SignIn/>} />
           <Route path="/singup" element={<SignUp/>} />
+          <Route path="/reset-password" element={<ResetPassword/>} />
         </Routes>
 
     </div>
