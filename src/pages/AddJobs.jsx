@@ -17,13 +17,7 @@ const AddJobs = () => {
  
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value
-    }));
-  };
+
 
 
   const handlePhoneChange=(e)=>{
@@ -95,7 +89,7 @@ const AddJobs = () => {
     })
   }
 
-  const handleDetailsChange=(e)=>{
+  const handleDescriptionChange=(e)=>{
     e.preventDefault()
 
     setFormData({
@@ -307,10 +301,10 @@ const AddJobs = () => {
             required
           >
             <option value="">Choose a workmode</option>
-            <option value="male">Remote</option>
-            <option value="female">Part-Time</option>
-            <option value="others">Contract</option>
-            <option value="everyone">Full-Time</option>
+            <option value="Remote">Remote</option>
+            <option value="Part-Time">Part-Time</option>
+            <option value="Contract">Contract</option>
+            <option value="Full-Time">Full-Time</option>
             
           </select>
         </div>
@@ -380,7 +374,7 @@ const AddJobs = () => {
           rows="3"
           placeholder="Enter your Details"
           value={formData.description}
-          onChange={handleDetailsChange}
+          onChange={handleDescriptionChange}
           required
         ></textarea>
       </div>
