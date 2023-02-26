@@ -1,6 +1,7 @@
 {
   "name": "skill-app-template",
   "private": true,
+  
   "version": "0.0.0",
   "type": "module",
   "scripts": {

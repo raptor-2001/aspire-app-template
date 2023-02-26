@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const AddJobs = () => {
   const [formData, setFormData] = useState({
+    companyname:'',
     name: '',
     email: '',
     duration: '',
@@ -9,7 +10,7 @@ const AddJobs = () => {
     salary: '',
     deadline: '',
     auxPhoneNumber: '',
-    Details: '',
+    description: '',
     skills: '',
     address:'',
     workmode:'',
@@ -24,38 +25,148 @@ const AddJobs = () => {
     }));
   };
 
-  const handleImageChange = (e) => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      profileImage: e.target.files[0]
-    }));
-  };
 
-  const handleResumeChange = (e) => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      resume: e.target.files[0]
-    }));
-  };
+  const handlePhoneChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+      auxPhoneNumber: e.target.value
+    })
+  }
+  const handleCompanyNameChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+      companyname: e.target.value
+    })
+  }
+  const handleNameChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+      name: e.target.value
+    })
+  }
+
+  const handleEmailChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+      email: e.target.value
+    })
+  }
+
+  const handleDurationChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+      duration: e.target.value
+    })
+  }
+  const handleRoleChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+      role: e.target.value
+    })
+  }
+
+  const handleSalaryChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+      salary: e.target.value
+    })
+  }
+
+  const handleDeadlineChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+      deadline: e.target.value
+    })
+  }
+
+  const handleDetailsChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+    description: e.target.value
+    })
+  }
+ 
 
 
+  const handleSkillChange=(e)=>{
+    e.preventDefault()
 
+    setFormData({
+    ...formData,
+      skills: e.target.value
+    })
+  }
+  const handleAddressChange=(e)=>{
+    e.preventDefault()
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormValues({ ...formValues, [name]: value });
-  };
+    setFormData({
+    ...formData,
+      address: e.target.value
+    })
+  }
+  const handleWorkmodeChange=(e)=>{
+    e.preventDefault()
 
-  const handleFileChange = (event) => {
-    const { name, files } = event.target;
-    setFormValues({ ...formValues, [name]: files[0] });
-  };
+    setFormData({
+    ...formData,
+      workmode: e.target.value
+    })
+  }
 
-  const handleSubmit = (event) => {
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setFormValues({ ...formValues, [name]: value });
+  // };
+
+  // const handleFileChange = (event) => {
+  //   const { name, files } = event.target;
+  //   setFormValues({ ...formValues, [name]: files[0] });
+  // };
+
+  const handleSubmit = async(event) => {
     event.preventDefault();
-    console.log(formValues);
+    console.log(formData);
     // TODO: Submit form to backend
+    await fetch('http://localhost:4000/api/job/add_job', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(response => {
+        console.log(response.json());
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+      alert("Submitted")
   };
+
+   
+
+    
+
+    
 
   return (
     <form onSubmit={handleSubmit} className="max-w-lg mx-auto mt-8 p-6 bg-white shadow-lg rounded-lg">
@@ -72,8 +183,8 @@ const AddJobs = () => {
           id="name"
           className="w-full border border-gray-400 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           placeholder="John Doe"
-          value={formData.name}
-          onChange={handleChange}
+          value={formData.companyname}
+          onChange={handleCompanyNameChange}
           required
         />
       </div>
@@ -90,7 +201,7 @@ const AddJobs = () => {
           className="w-full border border-gray-400 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           placeholder="John Doe"
           value={formData.name}
-          onChange={handleChange}
+          onChange={handleNameChange}
           required
         />
       </div>
@@ -106,7 +217,7 @@ const AddJobs = () => {
           className="w-full border border-gray-400 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           placeholder="johndoe@example.com"
           value={formData.email}
-          onChange={handleChange}
+          onChange={handleEmailChange}
           required
         />
       </div>
@@ -122,27 +233,27 @@ const AddJobs = () => {
           className="w-full border border-gray-400 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           placeholder="Frontend Developer"
           value={formData.role}
-          onChange={handleChange}
+          onChange={handleRoleChange}
           required
         />
       </div>
-
-
-      <div className="pb-6">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="skills">
-          Skills
+      <div className="mb-4">
+        <label htmlFor="sill" className="block font-medium text-gray-700 mb-2">
+          Skill
         </label>
         <input
-          className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="skills"
-          name="skills"
           type="text"
-          placeholder="Enter your skills"
+          name="skill"
+          id="skill"
+          className="w-full border border-gray-400 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          placeholder="Frontend Developer"
           value={formData.skills}
-          onChange={handleInputChange}
+          onChange={handleSkillChange}
           required
         />
       </div>
+
+      
 
 
       <div className="mb-4">
@@ -156,7 +267,7 @@ const AddJobs = () => {
           className="w-full border border-gray-400 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           placeholder="********"
           value={formData.duration}
-          onChange={handleChange}
+          onChange={handleDurationChange}
           required
         />
       </div>
@@ -177,7 +288,7 @@ const AddJobs = () => {
           type="number"
           placeholder="Enter your salary"
           value={formData.salary}
-          onChange={handleInputChange}
+          onChange={handleSalaryChange}
           required
         />
       </div>
@@ -186,11 +297,12 @@ const AddJobs = () => {
 
       <div>
           <label htmlFor="workmode" className="block font-medium pb-10">
-            Gender
+            WorkMode
           </label>
           <select
             name="workmode"
             id="workmode"
+            onChange={handleWorkmodeChange}
             className="w-full border-gray-300 rounded-md shadow-sm px-4 py-2"
             required
           >
@@ -199,6 +311,7 @@ const AddJobs = () => {
             <option value="female">Part-Time</option>
             <option value="others">Contract</option>
             <option value="everyone">Full-Time</option>
+            
           </select>
         </div>
 
@@ -217,7 +330,7 @@ const AddJobs = () => {
           type="text"
           placeholder="Enter your Deadline"
           value={formData.deadline}
-          onChange={handleInputChange}
+          onChange={handleDeadlineChange}
           required
         />
       </div> 
@@ -233,7 +346,7 @@ const AddJobs = () => {
           type="tel"
           placeholder="Enter your auxilary phone number"
           value={formData.auxPhoneNumber}
-          onChange={handleInputChange}
+          onChange={handlePhoneChange}
           required
         />
       </div>
@@ -249,7 +362,7 @@ const AddJobs = () => {
           rows="3"
           placeholder="Enter your Address"
           value={formData.address}
-          onChange={handleInputChange}
+          onChange={handleAddressChange}
           required
         ></textarea>
       </div>
@@ -266,8 +379,8 @@ const AddJobs = () => {
           name="Details"
           rows="3"
           placeholder="Enter your Details"
-          value={formData.Details}
-          onChange={handleInputChange}
+          value={formData.description}
+          onChange={handleDetailsChange}
           required
         ></textarea>
       </div>

@@ -1,9 +1,13 @@
 import React from 'react'
 import Footer from '../components/Footer';
 
+
+
 import Search from '../components/Components/SearchDiv/Search'
 import Jobs from '../components/Components/JobDiv/Jobs'
 const Job = () => {
+
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 

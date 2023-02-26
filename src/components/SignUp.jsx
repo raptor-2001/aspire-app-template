@@ -1,9 +1,94 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
 
 import Header from './Header';
 
 const SignUp = () => {
+  const [formData, setFormData] = useState({
+  
+    name: '',
+    email: '',
+    password: '',
+    password2:'',
+    role:'',
+    phone_number:''
+ 
+  });
+
+  const handleNameChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+    name: e.target.value
+    })
+  }
+  const handleEmailChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+    email: e.target.value
+    })
+  }
+  const handlePasswordChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+    password: e.target.value
+    })
+  }
+  const handlePassword2Change=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+    password2: e.target.value
+    })
+  }
+  const handlePhoneChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+    phone_number: e.target.value
+    })
+  }
+  const handleRoleChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+    role: e.target.value
+    })
+  }
+  const handleSubmit = async(event) => {
+    event.preventDefault();
+    console.log(formData);
+    // TODO: Submit form to backend
+    await fetch('http://localhost:4000/api/user/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(response => {
+        console.log(response.json());
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+      alert("Submitted")
+  };
+ 
+  
+
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden mt-5 pl-10 pr-20 ">
 
@@ -58,7 +143,7 @@ const SignUp = () => {
           dolorum aliquam, quibusdam aperiam voluptatum.
         </p>
 
-        <form action="#" class="mt-8 grid grid-cols-6 gap-6">
+        <form onSubmit={handleSubmit} action="#" class="mt-8 grid grid-cols-6 gap-6">
           <div class="col-span-6 sm:col-span-3">
             <label
               for="FirstName"
@@ -71,13 +156,34 @@ const SignUp = () => {
               type="text"
               id="FirstName"
               name="first_name"
+              onChange={handleNameChange}
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+
             />
           </div>
 
           
 
-          <div class="col-span-6">
+          
+
+          <div class="col-span-6 sm:col-span-3">
+            <label
+              for="role"
+              class="block text-sm font-medium text-gray-700"
+            >
+              Enter Role
+            </label>
+
+            <input
+              type="text"
+              id="role"
+              name="role"
+              onChange={handleRoleChange}
+              class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            />
+          </div>
+
+          <div class="col-span-6 sm:col-span-3">
             <label for="Email" class="block text-sm font-medium text-gray-700">
               Email
             </label>
@@ -86,38 +192,24 @@ const SignUp = () => {
               type="email"
               id="Email"
               name="email"
+              onChange={handleEmailChange}
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
             />
           </div>
 
           <div class="col-span-6 sm:col-span-3">
             <label
-              for="FirstName"
+              for="phoneno"
               class="block text-sm font-medium text-gray-700"
             >
-              First Name
+              Phone No
             </label>
 
             <input
-              type="text"
-              id="FirstName"
-              name="first_name"
-              class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-            />
-          </div>
-
-          <div class="col-span-6 sm:col-span-3">
-            <label
-              for="LastName"
-              class="block text-sm font-medium text-gray-700"
-            >
-              Last Name
-            </label>
-
-            <input
-              type="text"
-              id="LastName"
-              name="last_name"
+              type="tel"
+              id="phoneno"
+              name="phoneno"
+              onChange={handlePhoneChange}
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
             />
           </div>
@@ -135,6 +227,7 @@ const SignUp = () => {
               type="password"
               id="Password"
               name="password"
+              onChange={handlePasswordChange}
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
             />
           </div>
@@ -151,6 +244,7 @@ const SignUp = () => {
               type="password"
               id="PasswordConfirmation"
               name="password_confirmation"
+              onChange={handlePassword2Change}
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
             />
           </div>
