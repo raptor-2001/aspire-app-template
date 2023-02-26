@@ -70,16 +70,20 @@ const Navbar = () => {
                     navbar ? "block" : "hidden"
                 }`}
             >
-                <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                <ul className="items-center justify-center space-y-8 md:flex md:space-x-16 md:space-y-0">
                     <li className="text-white hover:text-indigo-200">
-                        <Link to="/">Scholarship</Link>
+                        <Link to="/">Home</Link>
                     </li>
                     <li className="text-white hover:text-indigo-200">
-                        <Link to="/sources">Our Partners</Link>
+                        <Link to="/sources">Jobs</Link>
                     </li>
                     <li className="text-white hover:text-indigo-200">
                         <Link to="/profile">Profile </Link>
                     </li>
+                    <li className="text-white hover:text-indigo-200">
+                        <Link to="/AddJobs">AddJobs </Link>
+                    </li>
+
                 </ul>
 
                 <div className="mt-3 space-y-2 lg:hidden md:inline-block">

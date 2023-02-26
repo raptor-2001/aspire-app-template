@@ -5,7 +5,7 @@ import Header from './Header';
 
 const SignUp = () => {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden mt-5">
+    <div className="flex flex-col min-h-screen overflow-hidden mt-5 pl-10 pr-20 ">
 
       {/*  Site header */}
       <Header />
@@ -13,83 +13,187 @@ const SignUp = () => {
       {/*  Page content */}
       <main className="flex-grow mt-5">
 
-        <section className="bg-gradient-to-b from-gray-100 to-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+     
 
-              {/* Page header */}
-              <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h1">Welcome. We exist to make entrepreneurism easier.</h1>
-              </div>
+<section class="bg-white">
+  <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
+    <aside
+      class="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6"
+    >
+      <img
+        alt="Pattern"
+        src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    </aside>
 
-              {/* Form */}
-              <div className="max-w-sm mx-auto">
-                <form>
-                  <div className="flex flex-wrap -mx-3 mb-4">
-                    <div className="w-full px-3">
-                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="name">Name <span className="text-red-600">*</span></label>
-                      <input id="name" type="text" className="form-input w-full text-gray-800" placeholder="Enter your name" required />
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap -mx-3 mb-4">
-                    <div className="w-full px-3">
-                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="email">Email <span className="text-red-600">*</span></label>
-                      <input id="email" type="email" className="form-input w-full text-gray-800" placeholder="Enter your email address" required />
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap -mx-3 mb-4">
-                    <div className="w-full px-3">
-                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="password">Password <span className="text-red-600">*</span></label>
-                      <input id="password" type="password" className="form-input w-full text-gray-800" placeholder="Enter your password" required />
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap -mx-3 mt-6">
-                    <div className="w-full px-3">
-                      <button className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Sign up</button>
-                    </div>
-                  </div>
-                  <div className="text-sm text-gray-500 text-center mt-3">
-                    By creating an account, you agree to the <a className="underline" href="#0">terms & conditions</a>, and our <a className="underline" href="#0">privacy policy</a>.
-                                </div>
-                </form>
-                <div className="flex items-center my-6">
-                  <div className="border-t border-gray-300 flex-grow mr-3" aria-hidden="true"></div>
-                  <div className="text-gray-600 italic">Or</div>
-                  <div className="border-t border-gray-300 flex-grow ml-3" aria-hidden="true"></div>
-                </div>
-                <form>
-                  <div className="flex flex-wrap -mx-3 mb-3">
-                    <div className="w-full px-3">
-                      <button className="btn px-0 text-white bg-gray-900 hover:bg-gray-800 w-full relative flex items-center">
-                        <svg className="w-4 h-4 fill-current text-white opacity-75 flex-shrink-0 mx-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M7.95 0C3.578 0 0 3.578 0 7.95c0 3.479 2.286 6.46 5.466 7.553.397.1.497-.199.497-.397v-1.392c-2.187.497-2.683-.993-2.683-.993-.398-.895-.895-1.193-.895-1.193-.696-.497.1-.497.1-.497.795.1 1.192.795 1.192.795.696 1.292 1.888.895 2.286.696.1-.497.298-.895.497-1.093-1.79-.2-3.578-.895-3.578-3.975 0-.895.298-1.59.795-2.087-.1-.2-.397-.994.1-2.087 0 0 .695-.2 2.186.795a6.408 6.408 0 011.987-.299c.696 0 1.392.1 1.988.299 1.49-.994 2.186-.795 2.186-.795.398 1.093.199 1.888.1 2.087.496.596.795 1.291.795 2.087 0 3.08-1.889 3.677-3.677 3.875.298.398.596.895.596 1.59v2.187c0 .198.1.497.596.397C13.714 14.41 16 11.43 16 7.95 15.9 3.578 12.323 0 7.95 0z" />
-                        </svg>
-                        <span className="flex-auto pl-16 pr-8 -ml-16">Continue with GitHub</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap -mx-3">
-                    <div className="w-full px-3">
-                      <button className="btn px-0 text-white bg-red-600 hover:bg-red-700 w-full relative flex items-center">
-                        <svg className="w-4 h-4 fill-current text-white opacity-75 flex-shrink-0 mx-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z" />
-                        </svg>
-                        <span className="flex-auto pl-16 pr-8 -ml-16">Continue with Google</span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-                <div className="text-gray-600 text-center mt-6">
-                  Already using Simple? <Link to="/signin" className="text-blue-600 hover:underline transition duration-150 ease-in-out">Sign in</Link>
-                </div>
-              </div>
+    <main
+      aria-label="Main"
+      class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:py-12 lg:px-16 xl:col-span-6"
+    >
+      <div class="max-w-xl lg:max-w-3xl">
+        <a class="block text-blue-600" href="/">
+          <span class="sr-only">Home</span>
+          <svg
+            class="h-8 sm:h-10"
+            viewBox="0 0 28 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.41 10.3847C1.14777 7.4194 2.85643 4.7861 5.2639 2.90424C7.6714 1.02234 10.6393 0 13.695 0C16.7507 0 19.7186 1.02234 22.1261 2.90424C24.5336 4.7861 26.2422 7.4194 26.98 10.3847H25.78C23.7557 10.3549 21.7729 10.9599 20.11 12.1147C20.014 12.1842 19.9138 12.2477 19.81 12.3047H19.67C19.5662 12.2477 19.466 12.1842 19.37 12.1147C17.6924 10.9866 15.7166 10.3841 13.695 10.3841C11.6734 10.3841 9.6976 10.9866 8.02 12.1147C7.924 12.1842 7.8238 12.2477 7.72 12.3047H7.58C7.4762 12.2477 7.376 12.1842 7.28 12.1147C5.6171 10.9599 3.6343 10.3549 1.61 10.3847H0.41ZM23.62 16.6547C24.236 16.175 24.9995 15.924 25.78 15.9447H27.39V12.7347H25.78C24.4052 12.7181 23.0619 13.146 21.95 13.9547C21.3243 14.416 20.5674 14.6649 19.79 14.6649C19.0126 14.6649 18.2557 14.416 17.63 13.9547C16.4899 13.1611 15.1341 12.7356 13.745 12.7356C12.3559 12.7356 11.0001 13.1611 9.86 13.9547C9.2343 14.416 8.4774 14.6649 7.7 14.6649C6.9226 14.6649 6.1657 14.416 5.54 13.9547C4.4144 13.1356 3.0518 12.7072 1.66 12.7347H0V15.9447H1.61C2.39051 15.924 3.154 16.175 3.77 16.6547C4.908 17.4489 6.2623 17.8747 7.65 17.8747C9.0377 17.8747 10.392 17.4489 11.53 16.6547C12.1468 16.1765 12.9097 15.9257 13.69 15.9447C14.4708 15.9223 15.2348 16.1735 15.85 16.6547C16.9901 17.4484 18.3459 17.8738 19.735 17.8738C21.1241 17.8738 22.4799 17.4484 23.62 16.6547ZM23.62 22.3947C24.236 21.915 24.9995 21.664 25.78 21.6847H27.39V18.4747H25.78C24.4052 18.4581 23.0619 18.886 21.95 19.6947C21.3243 20.156 20.5674 20.4049 19.79 20.4049C19.0126 20.4049 18.2557 20.156 17.63 19.6947C16.4899 18.9011 15.1341 18.4757 13.745 18.4757C12.3559 18.4757 11.0001 18.9011 9.86 19.6947C9.2343 20.156 8.4774 20.4049 7.7 20.4049C6.9226 20.4049 6.1657 20.156 5.54 19.6947C4.4144 18.8757 3.0518 18.4472 1.66 18.4747H0V21.6847H1.61C2.39051 21.664 3.154 21.915 3.77 22.3947C4.908 23.1889 6.2623 23.6147 7.65 23.6147C9.0377 23.6147 10.392 23.1889 11.53 22.3947C12.1468 21.9165 12.9097 21.6657 13.69 21.6847C14.4708 21.6623 15.2348 21.9135 15.85 22.3947C16.9901 23.1884 18.3459 23.6138 19.735 23.6138C21.1241 23.6138 22.4799 23.1884 23.62 22.3947Z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
 
-            </div>
+        <h1
+          class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
+        >
+          Welcome to Squid 🦑
+        </h1>
+
+        <p class="mt-4 leading-relaxed text-gray-500">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam
+          dolorum aliquam, quibusdam aperiam voluptatum.
+        </p>
+
+        <form action="#" class="mt-8 grid grid-cols-6 gap-6">
+          <div class="col-span-6 sm:col-span-3">
+            <label
+              for="FirstName"
+              class="block text-sm font-medium text-gray-700"
+            >
+              Full Name
+            </label>
+
+            <input
+              type="text"
+              id="FirstName"
+              name="first_name"
+              class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            />
           </div>
-        </section>
+
+          
+
+          <div class="col-span-6">
+            <label for="Email" class="block text-sm font-medium text-gray-700">
+              Email
+            </label>
+
+            <input
+              type="email"
+              id="Email"
+              name="email"
+              class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            />
+          </div>
+
+          <div class="col-span-6 sm:col-span-3">
+            <label
+              for="FirstName"
+              class="block text-sm font-medium text-gray-700"
+            >
+              First Name
+            </label>
+
+            <input
+              type="text"
+              id="FirstName"
+              name="first_name"
+              class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            />
+          </div>
+
+          <div class="col-span-6 sm:col-span-3">
+            <label
+              for="LastName"
+              class="block text-sm font-medium text-gray-700"
+            >
+              Last Name
+            </label>
+
+            <input
+              type="text"
+              id="LastName"
+              name="last_name"
+              class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            />
+          </div>
+
+
+          <div class="col-span-6 sm:col-span-3">
+            <label
+              for="Password"
+              class="block text-sm font-medium text-gray-700"
+            >
+              Password
+            </label>
+
+            <input
+              type="password"
+              id="Password"
+              name="password"
+              class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            />
+          </div>
+
+          <div class="col-span-6 sm:col-span-3">
+            <label
+              for="PasswordConfirmation"
+              class="block text-sm font-medium text-gray-700"
+            >
+              Password Confirmation
+            </label>
+
+            <input
+              type="password"
+              id="PasswordConfirmation"
+              name="password_confirmation"
+              class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            />
+          </div>
+
+          
+
+          <div class="col-span-6">
+            <p class="text-sm text-gray-500">
+              By creating an account, you agree to our
+              <a href="#" class="text-gray-700 underline">
+                terms and conditions
+              </a>
+              and
+              <a href="#" class="text-gray-700 underline">privacy policy</a>.
+            </p>
+          </div>
+
+          <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+            <button
+              class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+            >
+              Create an account
+            </button>
+
+            <p class="mt-4 text-sm text-gray-500 sm:mt-0">
+              Already have an account?
+              <a href="#" class="text-gray-700 underline">Log in</a>.
+            </p>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</section>
+
 
       </main>
+
+      
     </div>
+   
+   
+    
   );
 }
 

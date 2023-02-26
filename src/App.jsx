@@ -2,9 +2,11 @@ import * as React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Sources from './pages/Sources'
+
 import Profile from './pages/Profile'
 import Login from './pages/Login'
 import Navbar from './components/Navbar'
+import AddJobs from './pages/AddJobs'
 
 import './App.css'
 import RequireAuth from './components/RequireAuth'
@@ -23,6 +25,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/sources" element={<Sources/>} />
+      
           <Route 
             path="/profile" 
             element={
@@ -35,6 +38,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn/>} />
           <Route path="/singup" element={<SignUp/>} />
           <Route path="/reset-password" element={<ResetPassword/>} />
+          <Route path="/addjobs" element={<AddJobs/>} />
         </Routes>
 
     </div>

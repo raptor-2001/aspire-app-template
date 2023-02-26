@@ -13,89 +13,114 @@ const SignIn = () => {
 
       {/*  Page content */}
       <main className="flex-grow mt-4">
+     
 
-        <section className="bg-gradient-to-b from-gray-100 to-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-lg">
+    <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
+      Login to Get started
+    </h1>
 
-              {/* Page header */}
-              <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h1">Welcome back. We exist to make entrepreneurism easier.</h1>
-              </div>
+    <p class="mx-auto mt-4 max-w-md text-center text-gray-500">
+   
+    </p>
 
-              {/* Form */}
-              <div className="max-w-sm mx-auto">
-                <form>
-                  <div className="flex flex-wrap -mx-3 mb-4">
-                    <div className="w-full px-3">
-                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="email">Email</label>
-                      <input id="email" type="email" className="form-input w-full text-gray-800" placeholder="Enter your email address" required />
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap -mx-3 mb-4">
-                    <div className="w-full px-3">
-                      <div className="flex justify-between">
-                        <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="password">Password</label>
-                        <Link to="/reset-password" className="text-sm font-medium text-blue-600 hover:underline">Having trouble signing in?</Link>
-                      </div>
-                      <input id="password" type="password" className="form-input w-full text-gray-800" placeholder="Enter your password" required />
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap -mx-3 mb-4">
-                    <div className="w-full px-3">
-                      <div className="flex justify-between">
-                        <label className="flex items-center">
-                          <input type="checkbox" className="form-checkbox" />
-                          <span className="text-gray-600 ml-2">Keep me signed in</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap -mx-3 mt-6">
-                    <div className="w-full px-3">
-                      <button className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Sign in</button>
-                    </div>
-                  </div>
-                </form>
-                <div className="flex items-center my-6">
-                  <div className="border-t border-gray-300 flex-grow mr-3" aria-hidden="true"></div>
-                  <div className="text-gray-600 italic">Or</div>
-                  <div className="border-t border-gray-300 flex-grow ml-3" aria-hidden="true"></div>
-                </div>
-                <form>
-                  <div className="flex flex-wrap -mx-3 mb-3">
-                    <div className="w-full px-3">
-                      <button className="btn px-0 text-white bg-gray-900 hover:bg-gray-800 w-full relative flex items-center">
-                        <svg className="w-4 h-4 fill-current text-white opacity-75 flex-shrink-0 mx-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M7.95 0C3.578 0 0 3.578 0 7.95c0 3.479 2.286 6.46 5.466 7.553.397.1.497-.199.497-.397v-1.392c-2.187.497-2.683-.993-2.683-.993-.398-.895-.895-1.193-.895-1.193-.696-.497.1-.497.1-.497.795.1 1.192.795 1.192.795.696 1.292 1.888.895 2.286.696.1-.497.298-.895.497-1.093-1.79-.2-3.578-.895-3.578-3.975 0-.895.298-1.59.795-2.087-.1-.2-.397-.994.1-2.087 0 0 .695-.2 2.186.795a6.408 6.408 0 011.987-.299c.696 0 1.392.1 1.988.299 1.49-.994 2.186-.795 2.186-.795.398 1.093.199 1.888.1 2.087.496.596.795 1.291.795 2.087 0 3.08-1.889 3.677-3.677 3.875.298.398.596.895.596 1.59v2.187c0 .198.1.497.596.397C13.714 14.41 16 11.43 16 7.95 15.9 3.578 12.323 0 7.95 0z" />
-                        </svg>
-                        <span className="flex-auto pl-16 pr-8 -ml-16">Continue with GitHub</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap -mx-3">
-                    <div className="w-full px-3">
-                      <button className="btn px-0 text-white bg-red-600 hover:bg-red-700 w-full relative flex items-center">
-                        <svg className="w-4 h-4 fill-current text-white opacity-75 flex-shrink-0 mx-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z" />
-                        </svg>
-                        <span className="flex-auto pl-16 pr-8 -ml-16">Continue with Google</span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-                <div className="text-gray-600 text-center mt-6">
-                  Don’t you have an account? <Link to="/signup" className="text-blue-600 hover:underline transition duration-150 ease-in-out">Sign up</Link>
-                </div>
-              </div>
+    <form
+      action=""
+      class="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
+    >
+      <p class="text-center text-lg font-medium">Sign in to your account</p>
 
-            </div>
-          </div>
-        </section>
+      <div>
+        <label for="email" class="sr-only">Email</label>
+
+        <div class="relative">
+          <input
+            type="email"
+            class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+            placeholder="Enter email"
+          />
+
+          <span
+            class="absolute inset-y-0 right-0 grid place-content-center px-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <label for="password" class="sr-only">Password</label>
+
+        <div class="relative">
+          <input
+            type="password"
+            class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+            placeholder="Enter password"
+          />
+
+          <span
+            class="absolute inset-y-0 right-0 grid place-content-center px-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
+      >
+        Sign in
+      </button>
+
+      <p class="text-center text-sm text-gray-500">
+        No account?
+        <a class="underline" href="">Sign up</a>
+      </p>
+    </form>
+  </div>
+</div>
 
       </main>
 
-      
+      <footer className="bg-gray-800 py-4">
+    <div className="container mx-auto text-center text-white">
+      &copy; 2023 Platform Name. All rights reserved.
+    </div>
+  </footer>
 
     </div>
   );
