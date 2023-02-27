@@ -1,10 +1,83 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 
 
+
 const SignIn = () => {
+
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
+  const [error, setError] = useState("") ;
+  const navigate = useNavigate();
+
+  const handleEmailChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+      email: e.target.value
+    })
+  }
+  const handlePasswordChange=(e)=>{
+    e.preventDefault()
+
+    setFormData({
+    ...formData,
+      password: e.target.value
+    })
+  }
+
+  const handleSubmit = async(event) => {
+    event.preventDefault();
+    console.log(formData);
+    // TODO: Submit form to backend
+    try{
+      
+    const response = await fetch('http://localhost:4000/api/user/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+    
+    if (response.ok) {
+      const token = data.token;
+      localStorage.setItem('token', token);
+      window.location.href = '/sources';}
+      else {
+        console.log(data.message);
+        setError(data.message);
+        // throw new Error(data.message.response);
+        return;
+      }
+    
+    }catch (error) {
+      console.error(error);
+    }
+
+      // .then(response => {
+      //   console.log(response.json());
+      //   return 
+      // })
+      // .catch(error => {
+        
+      //   console.log(error);
+      //   return setError(error.response.data.passwordincorrect)
+      // });
+
+      // alert("Submitted")
+      // navigate('/sources');
+  };
+
+  
   return (
     <div className="flex flex-col min-h-screen overflow-hidden mt-4">
 
@@ -26,17 +99,21 @@ const SignIn = () => {
     </p>
 
     <form
+    onSubmit={handleSubmit}
       action=""
       class="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
     >
       <p class="text-center text-lg font-medium">Sign in to your account</p>
 
+          {error && <p class="text-center text-sm text-red-500">{error}</p>}
       <div>
         <label for="email" class="sr-only">Email</label>
 
         <div class="relative">
           <input
             type="email"
+            value={formData.email}
+            onChange={handleEmailChange}
             class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
             placeholder="Enter email"
           />
@@ -68,6 +145,8 @@ const SignIn = () => {
         <div class="relative">
           <input
             type="password"
+            value={formData.password}
+            onChange={handlePasswordChange}
             class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
             placeholder="Enter password"
           />

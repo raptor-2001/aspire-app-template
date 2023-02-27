@@ -156,6 +156,7 @@ const SignUp = () => {
               type="text"
               id="FirstName"
               name="first_name"
+              value={formData.name}
               onChange={handleNameChange}
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
 
@@ -178,6 +179,7 @@ const SignUp = () => {
               type="text"
               id="role"
               name="role"
+              value={formData.role}
               onChange={handleRoleChange}
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
             />
@@ -192,6 +194,7 @@ const SignUp = () => {
               type="email"
               id="Email"
               name="email"
+              value={formData.email}
               onChange={handleEmailChange}
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
             />
@@ -209,6 +212,7 @@ const SignUp = () => {
               type="tel"
               id="phoneno"
               name="phoneno"
+              value={formData.phone_number}
               onChange={handlePhoneChange}
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
             />
@@ -227,6 +231,7 @@ const SignUp = () => {
               type="password"
               id="Password"
               name="password"
+              value={formData.password}
               onChange={handlePasswordChange}
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
             />
@@ -244,6 +249,7 @@ const SignUp = () => {
               type="password"
               id="PasswordConfirmation"
               name="password_confirmation"
+              value={formData.password2}
               onChange={handlePassword2Change}
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
             />
