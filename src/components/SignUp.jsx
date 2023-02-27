@@ -69,7 +69,7 @@ const SignUp = () => {
     event.preventDefault();
     console.log(formData);
     // TODO: Submit form to backend
-    await fetch('http://localhost:4000/api/user/register', {
+    await fetch('https://aspire-job.onrender.com/api/user/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -92,8 +92,7 @@ const SignUp = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden mt-5 pl-10 pr-20 ">
 
-      {/*  Site header */}
-      <Header />
+      
 
       {/*  Page content */}
       <main className="flex-grow mt-5">
@@ -135,13 +134,13 @@ const SignUp = () => {
         <h1
           class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
         >
-          Welcome to Squid 🦑
+          Welcome to Aspire 🦑
         </h1>
 
-        <p class="mt-4 leading-relaxed text-gray-500">
+        {/* <p class="mt-4 leading-relaxed text-gray-500">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam
           dolorum aliquam, quibusdam aperiam voluptatum.
-        </p>
+        </p> */}
 
         <form onSubmit={handleSubmit} action="#" class="mt-8 grid grid-cols-6 gap-6">
           <div class="col-span-6 sm:col-span-3">
@@ -257,7 +256,7 @@ const SignUp = () => {
 
           
 
-          <div class="col-span-6">
+          {/* <div class="col-span-6">
             <p class="text-sm text-gray-500">
               By creating an account, you agree to our
               <a href="#" class="text-gray-700 underline">
@@ -266,7 +265,7 @@ const SignUp = () => {
               and
               <a href="#" class="text-gray-700 underline">privacy policy</a>.
             </p>
-          </div>
+          </div> */}
 
           <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
             <button
@@ -275,10 +274,10 @@ const SignUp = () => {
               Create an account
             </button>
 
-            <p class="mt-4 text-sm text-gray-500 sm:mt-0">
+            {/* <p class="mt-4 text-sm text-gray-500 sm:mt-0">
               Already have an account?
               <a href="#" class="text-gray-700 underline">Log in</a>.
-            </p>
+            </p> */}
           </div>
         </form>
       </div>

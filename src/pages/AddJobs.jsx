@@ -139,7 +139,7 @@ const AddJobs = () => {
     event.preventDefault();
     console.log(formData);
     // TODO: Submit form to backend
-    await fetch('http://localhost:4000/api/job/add_job', {
+    await fetch('https://aspire-job.onrender.com/api/job/add_job', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

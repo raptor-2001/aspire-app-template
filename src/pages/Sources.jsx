@@ -18,8 +18,8 @@ const Job = () => {
       {/*  Page content */}
       <main class="p-20">
 
-        {/*  Page sections */}
-        <Search />
+         {/* Page sections
+        <Search /> */}
 
         <Jobs />
 
@@ -28,11 +28,11 @@ const Job = () => {
 
       
       {/*  Site footer */}
-      <Footer />
+      {/* <Footer /> */}
 
       <footer className="bg-gray-800 py-4">
     <div className="container mx-auto text-center text-white">
-      &copy; 2023 Platform Name. All rights reserved.
+      &copy; 2023 VULCAN FORGE. All rights reserved.
     </div>
   </footer>
 

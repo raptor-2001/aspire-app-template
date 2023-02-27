@@ -29,9 +29,9 @@ const App = () => {
           <Route 
             path="/profile" 
             element={
-            <RequireAuth>
+            
               <Profile/>
-            </RequireAuth>
+            
             } 
           />
           <Route path="/login" element={<Login/>} />
@@ -39,9 +39,9 @@ const App = () => {
           <Route path="/singup" element={<SignUp/>} />
           <Route path="/reset-password" element={<ResetPassword/>} />
           <Route path="/addjobs" element={
-            <RequireAuth>
+            
             <AddJobs/>
-            </RequireAuth>
+            
           
           } />
         </Routes>

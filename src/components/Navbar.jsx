@@ -85,8 +85,7 @@ const Navbar = () => {
                     </li>
 
                 </ul>
-
-                <div className="mt-3 space-y-2 lg:hidden md:inline-block">
+                <div className=" mt-3 space-y-2 lg:hidden md:inline-block">
             <a
             >
                {authed ? <a className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800 cursor-pointer" onClick={handleLogout}>Logout</a> : <Login/>}
@@ -95,11 +94,25 @@ const Navbar = () => {
             </div>
         </div>
         <div className="hidden space-x-2 md:inline-block">
+
+        <ul className="flex gap-5 flex-grow justify-end flex-wrap items-center">
             
-                {authed ? <a className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800 cursor-pointer" onClick={handleLogout}>Logout</a> : <Login/>}
+                {/* {authed ? <a className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800 cursor-pointer" onClick={handleLogout}>Logout</a> : <Login/>} */}
+
+                
+              <li>
+                <Link to="/signin" className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800 cursor-pointer">Sign in</Link>
+              </li>
+              <li>
+                <Link to="/singup" className="inline-block w-full px-4 py-2 text-center text-white bg-blue-600 rounded-md shadow hover:bg-gray-800 cursor-pointer">
+                  <span>Sign up</span>
+                </Link>
+              </li>
+            </ul>
             
         </div>
-    </div>
+        </div>
+    
 </nav>
    
   )
